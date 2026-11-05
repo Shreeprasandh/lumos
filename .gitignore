@@ -1,0 +1,25 @@
+# Research & Arks Protocol Git Exclusion
+research/
+*.pdf
+*.pptx
+*.docx
+*_MASTER_STUDY_NOTEBOOK.md
+
+# Dependencies & Build artifacts
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Environment and Secret files
+.env
+.env.local
+.env.*.local
+.env.mcp
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
