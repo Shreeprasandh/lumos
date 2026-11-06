@@ -74,17 +74,58 @@ Generates an audit-grade, itemized Bill of Quantities formatted for **L&T SuFin*
 ## 4. Repository Structure
 
 ```
-.
-├── README.md                                       # Platform architectural overview & technical specifications
-├── LT_PROJECT_ABSTRACT.md                          # Official TECHgium Stage 1 abstract submission record
-├── LT_Light_Theme_Dashboard_Design_Specification.md# Production UI/UX layout blueprint & design system tokens
-├── five_monks_report.md                            # Adversarial pre-mortem and risk-assessment verification ledger
-└── .gitignore                                      # Protocol-level repository hygiene rules
+lumos/
+├── app/                          # Next.js 16 (App Router) + React 19 Workspace
+│   ├── layout.tsx                # Root layout with warm ivory (#FBF8F4) background & typography
+│   ├── page.tsx                  # Main 3-column command dashboard matching L&T.png
+│   └── globals.css               # Tailwind CSS v4 tokens & Emil Kowalski motion physics
+├── components/                   # Modular UI Components (1-to-1 with Design Spec)
+│   ├── layout/                   # BrandHeader, PrimaryNav, PipelineStrip
+│   ├── workspace/                # FloorPlanCanvas, LuxHeatmap, ConduitOverlay
+│   ├── project/                  # ProjectOverviewCard, RecentProjectsList
+│   ├── bom/                      # BomSummaryCard, TierAccordion, SuFinExportModal
+│   └── compliance/               # DesignComplianceCard (IS 3646, NBC 2016, IS 732, ECBC)
+├── engine/                       # Deterministic Pure-TypeScript MEP & Photometric Engines
+│   ├── types.ts                  # Comprehensive data contracts & statutory types
+│   ├── photometrics.ts           # Spatial cavity RCR, Zonal Cavity Lumen solver, Radiosity Ep
+│   ├── routing.ts                # Orthogonal Manhattan Steiner Minimal Tree conduit router
+│   ├── bom.ts                    # 6-Tier BOQ compiler with catalog codes & SuFin/SAP export
+│   └── sampleData.ts             # Office Floor L1 (50k sq.ft) benchmark floor & sample projects
+├── docs/                         # Formal Submissions & Design Specs
+│   ├── presentation/             # 07615_TG10_Presentation Round.pptx, template & build script
+│   ├── specs/                    # LT_Light_Theme_Dashboard_Design_Specification.md
+│   └── competition/              # TECHgium results PDF & project abstracts
+├── assets/                       # Static Design Assets & Media
+│   ├── team/                     # shree.jpeg, siva.jpeg, srihari.jpeg
+│   └── mockups/                  # L&T.png (Reference render)
+├── research/                     # The Alchemists research & benchmarks (isolated via .gitignore)
+├── five_monks_report.md          # The Five Monks advisory ledger
+├── LT_SPATIAL_LIGHTING_BOM_MASTER_STUDY_NOTEBOOK.md  # The Dumb living textbook
+├── package.json                  # Next.js 15.5, React 19, Tailwind CSS v4, Lucide
+└── .gitignore                    # Git cleanliness safeguard
 ```
 
 ---
 
-## 5. Competition Identification
+## 5. Getting Started & Local Execution
+
+```bash
+# 1. Install dependencies
+pnpm install
+
+# 2. Start local development server
+pnpm dev
+
+# 3. Build optimized production bundle
+pnpm build
+
+# 4. Launch production server
+pnpm start -p 3008
+```
+
+---
+
+## 6. Competition Identification
 
 * **Initiative**: TECHgium® 10th Edition (L&T Technology Services)
 * **Challenge**: Spatial-Analysis-to-BOM Generator for LightingDesign (Domain: Manufacturing)
